@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nmap Scanner Pretty (Go)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>🔎 Nmap Scanner Pretty (Go)</h1>
+  <p>Made with 💙 by Matin</p>
+</header>
+
+<main>
+
+<section>
+  <h2>Overview</h2>
+  <p><code>Nmap Scanner Pretty</code> is a terminal-based Go program using <strong>nmap</strong> to scan hosts and ports, producing colorful, emoji-rich, terminal-friendly outputs. Results are exported in <strong>XML</strong>, <strong>JSON</strong>, and a <strong>Log.txt</strong> file.</p>
+  <p>This tool is intended for <strong>educational, legal, and penetration testing practice</strong> only.</p>
+</section>
+
+<section>
+  <h2>Installation Examples</h2>
+
+  <h3>Termux</h3>
+  <pre><code>pkg update && pkg upgrade -y
+pkg install golang git nmap clang -y
+termux-setup-storage</code></pre>
+  <button class="copy-btn">Copy</button>
+
+  <h3>Linux (Debian/Ubuntu)</h3>
+  <pre><code>sudo apt update && sudo apt install golang git nmap clang -y</code></pre>
+  <button class="copy-btn">Copy</button>
+
+  <h3>macOS (Homebrew)</h3>
+  <pre><code>brew install go git nmap clang</code></pre>
+  <button class="copy-btn">Copy</button>
+
+  <h3>Windows</h3>
+  <pre><code># Install Go: https://go.dev/dl/
+# Install Nmap: https://nmap.org/download.html
+# Optional: Git: https://git-scm.com/downloads</code></pre>
+  <button class="copy-btn">Copy</button>
+
+</section>
+
+<section>
+  <h2>Setup & Build</h2>
+  <pre><code># With clang
+go build -o nmapscanner nmap_scanner.go
+
+# Without CGO (no clang required)
+CGO_ENABLED=0 go build -o nmapscanner nmap_scanner.go</code></pre>
+  <button class="copy-btn">Copy</button>
+</section>
+
+<section>
+  <h2>Usage</h2>
+  <pre><code># Scan targets
+./nmapscanner -targets "192.168.1.1,example.com,https://example.com"
+
+# Custom nmap arguments
+./nmapscanner -targets "example.com" -nmap-args "-sV -p80,443 --open"
+
+# Specify output directory
+./nmapscanner -targets "example.com" -outdir ~/my_scans</code></pre>
+  <button class="copy-btn">Copy</button>
+</section>
+
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Only scan networks/hosts you own or have permission to scan.</li>
+    <li>Terminal output is colorful; file outputs include plain text with emojis.</li>
+    <li>Feel free to edit and use this README for your own projects.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>License</h2>
+  <p>MIT License — free to use for educational and legal purposes.</p>
+</section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
