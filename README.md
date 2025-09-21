@@ -1,69 +1,45 @@
-Nmap Scanner Pretty (Go)
+# Nmap Scanner Pretty (Go)
 
-Overview
+## Overview
+`Nmap Scanner Pretty` is a terminal-based Go program using **nmap** to scan hosts and ports, producing **colorful, emoji-rich, and terminal-friendly outputs**. Results are exported in **XML**, **JSON**, and a **Log.txt** file.
 
-Nmap Scanner Pretty is a terminal-based Go program using nmap to scan hosts and ports, producing colorful, emoji-rich, and terminal-friendly outputs. Results are exported in XML, JSON, and a Log.txt file.
+This tool is intended for **educational, legal, and penetration testing practice** only.
 
-This tool is intended for educational, legal, and penetration testing practice only.
+## Features
+- Supports **IP addresses**, **hostnames**, **URLs**, and **CIDR ranges**.
+- Generates **colored terminal output** with emojis for open/closed/filtered ports.
+- Saves scan results as **XML**, **JSON**, and **Log.txt**.
+- Configurable **nmap arguments**, scan timeout, and output directory.
+- Compatible with **Termux**, Linux, macOS, and Windows.
 
-Features
+## Prerequisites
+- **Go** installed (version 1.21+ recommended)
+- **nmap** installed and available in PATH
+- Optional: **clang** if CGO is needed (or disable CGO for pure-Go build)
 
-Supports IP addresses, hostnames, URLs, and CIDR ranges.
+## Installation Examples
 
-Generates colored terminal output with emojis for open/closed/filtered ports.
-
-Saves scan results as XML, JSON, and Log.txt.
-
-Configurable nmap arguments, scan timeout, and output directory.
-
-Compatible with Termux, Linux, macOS, and Windows.
-
-
-Prerequisites
-
-Go installed (version 1.21+ recommended)
-
-nmap installed and available in PATH
-
-Optional: clang if CGO is needed (or disable CGO for pure-Go build)
-
-
-Installation Examples
-
-Termux:
-
+### Termux
+```bash
 pkg update && pkg upgrade -y
 pkg install golang git nmap clang -y
 termux-setup-storage
 
-Linux (Debian/Ubuntu):
+Linux (Debian/Ubuntu)
 
 sudo apt update && sudo apt install golang git nmap clang -y
 
-macOS (Homebrew):
+macOS (Homebrew)
 
 brew install go git nmap clang
 
-Windows:
+Windows
 
-Install Go from https://go.dev/dl/
-
-Install nmap from https://nmap.org/download.html
-
-Optional: Install Git from https://git-scm.com/downloads
-
+# Install Go: https://go.dev/dl/
+# Install Nmap: https://nmap.org/download.html
+# Optional: Git: https://git-scm.com/downloads
 
 Setup & Build
-
-1. Clone or copy project files.
-
-
-2. Verify nmap installation: nmap --version
-
-
-3. Build program:
-
-
 
 # With clang
 go build -o nmapscanner nmap_scanner.go
@@ -97,6 +73,8 @@ Only scan networks/hosts you own or have permission to scan.
 
 Terminal output is colorful; file outputs include plain text with emojis.
 
+Feel free to edit and use this README for your own projects.
+
 
 License
 
@@ -106,4 +84,3 @@ MIT License — free to use for educational and legal purposes.
 ---
 
 Made with 💙 by Matin
-
